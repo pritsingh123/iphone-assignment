@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AchievementsController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/users/{user}/achievements', [AchievementsController::class, 'index']);
-Route::get('/users', [AchievementsController::class, 'index']);
+Route::get('/users/{user}/achievements', [AchievementsController::class, 'index']);
+// Route::get('/users/{}', [AchievementsController::class, 'index']);
+// Route::get('/users/{user}/achievements', [AchievementsController::class, 'index'])
+    // ->where('user', User::class);
